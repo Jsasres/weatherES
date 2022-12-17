@@ -23,12 +23,12 @@ temperature = main['temp']
 conditions = weather_data['weather']
 humidity = main['humidity']
 
-#establish connection to ES cloud cluster with API key and deployment ID 
-ELASTIC_KEY = "XXXX"
+#establish connection to ES cloud cluster with basic auth and deployment ID 
+ELASTIC_PASS = "XXXX"
 CLOUD_ID = "XXXX"
 es = Elasticsearch(
     cloud_id=CLOUD_ID,
-    basic_auth=("elastic", ELASTIC_KEY)
+    basic_auth=("elastic", ELASTIC_PASS)
 )
 
 #build json document
